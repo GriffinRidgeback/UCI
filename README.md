@@ -1,2 +1,2 @@
 # UCI
-This repository contains the work done for my course project [Getting and Cleaning Data]
+This repository contains the project work done for my course Getting and Cleaning Data
