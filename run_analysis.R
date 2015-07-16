@@ -15,3 +15,8 @@ test_data  <- cbind(test_data, X_test)
 
 all_data  <- rbind(train_data, test_data)
 
+measurement_names <- read.table("./data/features.txt", stringsAsFactors = F)
+
+names(all_data)  <- c("SubjectID", "Activity", measurement_names$V2)
+
+all_data_ordered  <- all_data[with(all_data, order(SubjectID, Activity)), ]
