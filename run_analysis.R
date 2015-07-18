@@ -27,18 +27,16 @@ all_data_ordered  <- all_data[with(all_data, order(SubjectID, Activity)), ]
 # get the names for excluding duplicates
 names <- colnames(all_data_ordered)
 
-# Now we can remove the duplicate column names
-all_data_ordered  <- all_data_ordered[, !duplicated(names)]
-
-# refresh this variable, since the column names have changed
-names <- colnames(all_data_ordered)
-
-# This is a check for no duplicates in our columns of interest
-# need to have a better name for this
-selected_columns  <- grep("(mean|std)", names)
+# now show that none of the columns of interest are duplicated
+selected_columns  <- grep(".*mean\\(.*|.*std\\(.*", names)
 
 # and the test
 length(names[selected_columns]) == length(unique(names)[selected_columns])
 
-# Now select the columns of interest and filter again to exclude Freq
-# Don't know how to make one grep statement to handle them all
+# Now it has been shown that none of the columns
+# of interest are duplicates, so the selected_columns vector
+# can be used to subset the full dataset in order to create
+# a dataset with only columns containing mean and std
+# measurements, which is ready to be relabeled and further reduced.
+all_data_ordered  <- all_data_ordered[, c(1:2, selected_columns)]
+
