@@ -2,13 +2,13 @@ library(dplyr)
 
 activity_labels <- read.table("./data/activity_labels.txt", colClasses = "character")
 features <-  read.table("./data/features.txt", colClasses = "character")
-subject_train <- read.table("./data/train/subject_train.txt")
-X_train <- read.table("./data/train/X_train.txt")
-y_train <- read.table("./data/train/y_train.txt")
-subject_test <- read.table("./data/test/subject_test.txt")
-X_test <- read.table("./data/test/X_test.txt")
-y_test <- read.table("./data/test/y_test.txt")
-
+subject_train <- read.table("./data/train/subject_train.txt", colClasses = "numeric")
+X_train <- read.table("./data/train/X_train.txt", colClasses = "numeric")
+y_train <- read.table("./data/train/y_train.txt", colClasses = "numeric")
+subject_test <- read.table("./data/test/subject_test.txt", colClasses = "numeric")
+X_test <- read.table("./data/test/X_test.txt", colClasses = "numeric")
+y_test <- read.table("./data/test/y_test.txt", colClasses = "numeric")
+ 
 train_data  <- cbind(subject_train, y_train)
 train_data  <- cbind(train_data, X_train)
 
