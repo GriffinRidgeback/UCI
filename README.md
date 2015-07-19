@@ -6,6 +6,24 @@ This repository contains the project work done for my course Getting and Cleanin
 [David's personal course project FAQ] (https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
 [Tidy Data and the Assignment] (https://class.coursera.org/getdata-030/forum/thread?thread_id=107)
 
+
+Add to the submission box:
+"tidy data as per the ReadMe that can be read into R with read.table(header=TRUE)"
+
+Explain what the script does and then generates a tidy data text file that meets the principles of ...etc""
+
+The codebook has the specific description of the tidy data file contents and you mention that it exists and its role in this readme document.
+
+Make sure:
+1. headings clearly identify which columns are which
+2. variables are in different columns
+3. no duplicates (check!)
+
+
+
+
+
+
 Tidy data is not made to be looked neatly at in programs like notepad (which is often the default for text files on windows), but if you saved the file with write.table according to the instructions, the command for reading it in and looking at it in R would be
 
     data <- read.table(file_path, header = TRUE) #if they used some other way of saving the file than a default write.table, this step will be different
