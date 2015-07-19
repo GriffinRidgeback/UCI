@@ -1,5 +1,6 @@
 library(dplyr)
 
+# 1 - Merges the training and the test sets to create one data set.
 activity_labels <- read.table("./data/activity_labels.txt", colClasses = "character")
 features <-  read.table("./data/features.txt", colClasses = "character")
 subject_train <- read.table("./data/train/subject_train.txt", colClasses = "numeric")
@@ -24,6 +25,7 @@ names(all_data)  <- c("SubjectID", "Activity", measurement_names$V2)
 # put the data in order
 all_data_ordered  <- all_data[with(all_data, order(SubjectID, Activity)), ]
 
+# 2 - Extracts only the measurements on the mean and standard deviation for each measurement. 
 # get the names for excluding duplicates
 names <- colnames(all_data_ordered)
 
@@ -40,3 +42,12 @@ length(names[selected_columns]) == length(unique(names)[selected_columns])
 # measurements, which is ready to be relabeled and further reduced.
 all_data_ordered  <- all_data_ordered[, c(1:2, selected_columns)]
 
+# 3 - Uses descriptive activity names to name the activities in the data set
+
+# 4 - Appropriately labels the data set with descriptive variable names. 
+new_names  <- colnames((all_data_ordered))
+new_names  <- gsub("-mean\\(\\)-", "Mean", new_names)
+new_names  <- gsub("-mean\\(\\)", "Mean", new_names)
+new_names  <- gsub("-std\\(\\)-", "Std", new_names)
+new_names  <- gsub("-std\\(\\)", "Std", new_names)
+names(all_data_ordered)  <- new_names
