@@ -43,6 +43,9 @@ length(names[selected_columns]) == length(unique(names)[selected_columns])
 all_data_ordered  <- all_data_ordered[, c(1:2, selected_columns)]
 
 # 3 - Uses descriptive activity names to name the activities in the data set
+for (i in 1:6) {
+    all_data_ordered[all_data_ordered$Activity == i, 2]  <- activity_labels$V2[i]
+}
 
 # 4 - Appropriately labels the data set with descriptive variable names. 
 new_names  <- colnames((all_data_ordered))
