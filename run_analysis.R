@@ -54,3 +54,7 @@ new_names  <- gsub("-mean\\(\\)", "Mean", new_names)
 new_names  <- gsub("-std\\(\\)-", "Std", new_names)
 new_names  <- gsub("-std\\(\\)", "Std", new_names)
 names(all_data_ordered)  <- new_names
+
+# 5 - From the data set in step 4, creates a second, independent tidy data 
+# set with the average of each variable for each activity and each subject.
+tidy_data <- group_by(all_data_ordered, SubjectID, Activity) %>% summarise_each(funs(mean))
