@@ -1,5 +1,13 @@
 library(dplyr)
 
+# 0 - Download and extract the files
+# setwd(".")
+# if (!file.exists("getdata_projectfiles_UCI HAR Dataset.zip")) {
+#   fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+#   download.file(fileUrl, destfile = "./data.zip", method = "curl")
+#   unzip("data.zip", exdir = "./data")  # will extract data.zip into folder UCI HAR Dataset
+# }
+
 # 1 - Merges the training and the test sets to create one data set.
 activity_labels <- read.table("./data/activity_labels.txt", colClasses = "character")
 features <-  read.table("./data/features.txt", colClasses = "character")
@@ -43,7 +51,7 @@ length(names[selected_columns]) == length(unique(names)[selected_columns])
 all_data_ordered  <- all_data_ordered[, c(1:2, selected_columns)]
 
 # 3 - Uses descriptive activity names to name the activities in the data set
-for (i in 1:6) {
+for (i in 1:length(activity_labels$V2)) {
     all_data_ordered[all_data_ordered$Activity == i, 2]  <- activity_labels$V2[i]
 }
 
