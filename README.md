@@ -27,12 +27,13 @@ In addition to this README, there is a file in the repository named CodeBook.md 
 
 ## Detailed explanation
 ### Step 0 - Obtain and extract the data  
-The dataset under analysis (UCI HAR Dataset) is obtained from the UCI Machine Learning Repository^2^.  The script contains code to:  
-1. set the working directory to the directory from which the script is run
-2. check for the existence of the compressed data file
-3. if the compressed data file does not exist:
-+ the file will be downloaded as *data.zip* from the link pointing to the UCI Machine Learning Repository^2^
-+ the compressed file will be extracted to the *data* directory, relative to the current working directory
+The dataset under analysis (*UCI HAR Dataset*) is obtained from the UCI Machine Learning Repository^2^.  The script __run_analysis.R__ contains code to:
+
+1. set the working directory to the directory from which the script is run  
+2. check for the existence of the compressed data file  
+3. if the compressed data file does not exist:  
++ the file will be downloaded as *data.zip* from the link pointing to the UCI Machine Learning Repository^2^  
++ the compressed file will be extracted to the *data* directory, relative to the current working directory  
 + the files for analysis will reside in *data/UCI HAR Dataset*, *data/UCI HAR Dataset/train*, and *data/UCI HAR Dataset/test*  
 
 **NOTE**:  The code to do the actual download and extraction has been commented out due to the prohibitive time of the download.  Prior to executing the script, it is expected that the user of the script has downloaded the file directly from the page link (__*much*__ faster!) and extracted the contents to the following directories: *./data*, *./data/train*, and *./data/test*.  Step 1 of the script will verify the existence of this directory and exit the script should it not exist.
