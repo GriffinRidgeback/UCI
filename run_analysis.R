@@ -9,11 +9,20 @@ library(dplyr)
 # }
 
 # 1 - Merges the training and the test sets to create one data set.
+
+if (!file.exists("./data")) {
+    stop("The directory data does not exist in the current directory.")
+}
+
+readline(prompt="Press [enter] to continue... ")
+
 activity_labels <- read.table("./data/activity_labels.txt", colClasses = "character")
 features <-  read.table("./data/features.txt", colClasses = "character")
+
 subject_train <- read.table("./data/train/subject_train.txt", colClasses = "numeric")
 X_train <- read.table("./data/train/X_train.txt", colClasses = "numeric")
 y_train <- read.table("./data/train/y_train.txt", colClasses = "numeric")
+
 subject_test <- read.table("./data/test/subject_test.txt", colClasses = "numeric")
 X_test <- read.table("./data/test/X_test.txt", colClasses = "numeric")
 y_test <- read.table("./data/test/y_test.txt", colClasses = "numeric")
