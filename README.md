@@ -72,6 +72,7 @@ The final step in the processing is to do the analysis.  The dataset is grouped 
 ###### 4. [*David's personal course project FAQ*](https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
 ###### 5. [*Tidy Data and the Assignment*](https://class.coursera.org/getdata-030/forum/thread?thread_id=107)
 
+
 ---
 title: "ReadMe"
 author: "Kevin E. D'Elia"
