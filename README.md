@@ -63,15 +63,14 @@ After the original dataset has been reduced to one containing only mean and stan
 The first step in this phase of processing extracts the column headers in order to modify them to more meaningful names.  The modification steps are to replace all __-mean()-__ and __-std()-__ text with __Mean__ and __Std__, respectively.  The final modification is to prefix all measurement column headers with the Greek letter mu, which represents an arithmetic mean value, and enclose the column headers in parentheses.  The existing columns of the dataset are then overlaid with the new column headers.
 
 ### Step 5 - From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
-The final step in the processing is to do the analysis.  The dataset is grouped by __SubjectID__ and __Activity__ and the columns associated with the grouping are summarized via the mean function.  The output of the analysis is written to the local file system using __write.table__ with no specific options other than the defaults; the name of the output file is __tidy_data.txt__ and can be read back into R for verification using __read.table("./tidy_data.txt", header=TRUE)__.
-
+The final step in the processing is to do the analysis.  The dataset is grouped by __SubjectID__ and __Activity__ and the columns associated with the grouping are summarized via the mean function.  The output of the analysis is written to the local file system using __write.table__ with no specific options other than the defaults; the name of the output file is __tidy_data.txt__ and can be read back into R for verification using __tidy  <- read.table("./tidy_data.txt", header=TRUE)__ and then viewing the **tidy** variable.
 
 ##### __References__:
-###### 1. *Data Science, Wearable Computing and the Battle for the Throne as World’s Top Sports Brand* (http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/)
-###### 2. *Human Activity Recognition Using Smartphones Data Set* (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
-###### 3. *Hadley Wickham's paper on Tidy Data* (http://www.jstatsoft.org/v59/i10/paper)
-###### 4. *David's personal course project FAQ* (https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
-###### 5. *Tidy Data and the Assignment* (https://class.coursera.org/getdata-030/forum/thread?thread_id=107)
+###### 1. [*Data Science, Wearable Computing and the Battle for the Throne as World’s Top Sports Brand*](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/)
+###### 2. [*Human Activity Recognition Using Smartphones Data Set*](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
+###### 3. [*Hadley Wickham's paper on Tidy Data*](http://www.jstatsoft.org/v59/i10/paper)
+###### 4. [*David's personal course project FAQ*](https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
+###### 5. [*Tidy Data and the Assignment*](https://class.coursera.org/getdata-030/forum/thread?thread_id=107)
 
 ---
 title: "ReadMe"

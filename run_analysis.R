@@ -132,7 +132,7 @@ readline(prompt="Step 5 will create the tidy data; press [enter] to continue... 
 # create tidy dataset with the average of each variable for each activity and each subject.
 tidy_data <- group_by(all_data_ordered, SubjectID, Activity) %>% summarise_each(funs(mean))
 
-# write out the tidy data
-write.table(tidy_data, "./tidy_data.txt")
+# write out the tidy data, omitting the row.names
+write.table(tidy_data, "./tidy_data.txt", row.names = F)
 
 readline(prompt="Analysis of data completed; tidy data set produced and written to local file system. Press [enter] to exit the script... ")
