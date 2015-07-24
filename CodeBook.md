@@ -34,7 +34,7 @@ These signals were used to estimate variables of the feature vector for each pat
 5. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
 
 ###Cleaning of the data
-For a more in-depth explanation of __run_analysis.R__, see the **ReadMe** at the following [link](https://github.com/GriffinRidgeback/UCI/blob/master/README.md)
+For a more in-depth explanation of __run_analysis.R__, see the [**ReadMe**](https://github.com/GriffinRidgeback/UCI/blob/master/README.md)
 
 ##Description of the variables in the tiny_data.txt file
  - __Dimensions of the dataset__ : data frame containing 180 obs. of  68 variables
@@ -111,33 +111,36 @@ For a more in-depth explanation of __run_analysis.R__, see the **ReadMe** at the
 
 ###Variable 1 : SubjectID 
 
-Short description of what the variable describes.
+The activities were performed by 30 volunteer subjects.  This variable is a numerical representation of each subject in the experiment.
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+ - **Class/Type**: numeric
+ - **Unique values/levels**: an integer value in the range 1-30
+ - **Unit of measurement**: n/a
+ - **Source**: values for this variable were obtained from the data contained in the files **train/subject_train.txt** and **test/subject_test.txt**
 
 ###Variable 2 : Activity 
 
-Short description of what the variable describes.
+The original data contained numerical values in the range 1-6, denoting the six activities performed by each of the 30 volunteer subjects.  Once the data was read in and combined with other information, these numerical values were converted to their string representations for greater clarity.
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+ - **Class/Type**: int (original), character (converted)
+ - **Unique values/levels**: an integer value in the range 1-6 (original), a textual value [one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING] (converted)
+ - **Unit of measurement**: n/a
+ - **Source**: values for this variable were obtained from the data contained in the files **activity_labels.txt**, **train/y_train.txt** and **test/y_test.txt**
 
 ###Variables 3-68 : means of mean and standard deviation measurements
 
-Short description of what the variable describes.
+ - **Class/Type**: numeric
+ - **Unique values/levels**: features are normalized and bounded between [-1, 1]
+ - **Unit of measurement**: combination of mean and standard deviation values; see also the section in this document titled *Collection of the raw data*
+ - **Source**: values for this variable were obtained from the data contained in the files **features.txt**, **train/X_train.txt** and **test/X_test.txt**
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+####Notes on Variables 3-68 :
+The original measurement variable names took the format *tBodyAcc-mean()-X*, for example.  Once the required variables for mean and standard deviation measurements were extracted, the variable names which remained were converted in the following way:
+
+1. all **-mean()-** and **-std()-** characters were replaced with **Mean** and **Std**, respectively
+2. the major portion of the variable name was retained because the description provided by the authors of the study could not be improved on without producing unwieldy variable names
+3. conversion to lowercase according to the recommended approach for editing variable names was not done because doing so would result in harder-to-read variable names; the camelCase approach provided better clarity
+4. the variable names were wrapped in a **μ()** character sequence, **μ** being the mathematical symbol for *mean*
 
 ##Sources
 This codebook is based on the work of Joris Schut^2^.

@@ -54,7 +54,7 @@ Once the existence of the *./data* has been confirmed, the script will read in a
 **NOTE**: The dataset also includes Inertial Signals data for both the training and testing sessions.  These data files were not used in the analysis.
 
 ### Step 2 - Extract only the columns containing values for the mean and standard deviation of each measurement
-After the data has been read in successfully, the column headers are set using the text __SubjectID__, __Activity__, and the contents of the second column from __features.txt__.  Duplicate columns are then identified and the dataset is subsetted using the logical vector of unique columns.  Then the data is sorted first by __SubjectID__, then __Activity__.  The column names are extracted and a grep is run against them to extract the column indices for mean and standard deviation measurements. The guideline for coding the regular expression to determine which columns to keep is that any column name which includes the text __mean()__ or __std()__ was selected; all others were excluded.  This vector of indices is used to subset the original dataset to create a reduced dataset containing measurements for mean and standard deviations values only.
+After the data has been read in successfully, the column headers are set using the text __SubjectID__, __Activity__, and the contents of the second column from __features.txt__.  Duplicate columns are then identified and the dataset is subsetted using the logical vector of unique columns.  Then the data is sorted first by __SubjectID__, then __Activity__.  The column names are extracted and a grep is run against them to extract the column indices for mean and standard deviation measurements. The guideline for coding the regular expression to determine which columns to keep is that any column name which includes the text __mean()__ or __std()__ was selected; all others were excluded.  This includes ones such as *angle(X,gravityMean)* [which was excluded because *mean* is a parameter] and *fBodyBodyGyroJerkMag-meanFreq()* [which was excluded because it was a weighted average].  This vector of indices is used to subset the original dataset to create a reduced dataset containing measurements for mean and standard deviations values only.
 
 ### Step 3 - Use descriptive activity names to name the activities in the data set
 After the original dataset has been reduced to one containing only mean and standard deviation measurements, the numerical values which are contained in the __Activity__ column are converted to textual values using the information contained in the __activity_labels.txt__ data.  The conversion is achieved through the use of a loop which iterates over the length of the __activity_labels__ vector and subsets the dataset based on loop index, replacing the __Activity__ column value of all matching rows with the corresponding entry from the __activity_labels__ vector.  
@@ -70,8 +70,7 @@ The final step in the processing is to do the analysis.  The dataset is grouped 
 ###### 2. [*Human Activity Recognition Using Smartphones Data Set*](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
 ###### 3. [*Hadley Wickham's paper on Tidy Data*](http://www.jstatsoft.org/v59/i10/paper)
 ###### 4. [*David's personal course project FAQ*](https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
-###### 5. [*Tidy Data and the Assignment*](https://class.coursera.org/getdata-030/forum/thread?thread_id=107)
-
+###### 5. [*Tidy Data and the Assignment*](https://class.coursera.org/getdata-030/forum/thread?thread_id=107)  
 
 ---
 title: "ReadMe"
