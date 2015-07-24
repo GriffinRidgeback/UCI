@@ -123,7 +123,7 @@ The activities were performed by 30 volunteer subjects.  This variable is a nume
 The original data contained numerical values in the range 1-6, denoting the six activities performed by each of the 30 volunteer subjects.  Once the data was read in and combined with other information, these numerical values were converted to their string representations for greater clarity.
 
  - **Class/Type**: int (original), character (converted)
- - **Unique values/levels**: an integer value in the range 1-6 (original), a textual value [one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING] (converted)
+ - **Unique values/levels**: an integer value in the range 1-6 (original), a textual value {one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING} (converted)
  - **Unit of measurement**: n/a
  - **Source**: values for this variable were obtained from the data contained in the files **activity_labels.txt**, **train/y_train.txt** and **test/y_test.txt**
 
