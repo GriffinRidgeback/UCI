@@ -10,6 +10,11 @@ This repository contains the project work done for my Coursera class __Getting a
 
 The purpose of this project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare a dataset which meets the principles of tidy data^3^ and that can be used for later analysis.  To this end, the file __run_analysis.R__ contains the R code necessary for the task.
 
+The dataset which is constructed during the initial processing of the data is a "messy" dataset because of the following violations of the tidy data principles:
+
+1. There are duplicate columns (i.e., every column does not contain a different variable)
+2. Not every row is a single observation
+
 The motivation for the project comes from research being done in the area of wearable computing^1^.  The data used in the project is data collected from the accelerometers of the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained^2^.
 
 Guidelines for approaching the project work can be found in the Coursera Course Project Forum^4^, ^5^.
@@ -71,6 +76,8 @@ The first step in this phase of processing extracts the column headers in order 
 
 ### Step 5 - From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
 The final step in the processing is to do the analysis.  The dataset is grouped by __SubjectID__ and __Activity__ and the columns associated with the grouping are summarized via the mean function.  The output of the analysis is written to the local file system using __write.table__ with no specific options other than the defaults; the name of the output file is __tidy_data.txt__ and can be read back into R for verification using __tidy  <- read.table("./tidy_data.txt", header=TRUE)__ and then viewing the **tidy** variable.
+
+**Note**: For some reason, when reading the data back in, the parentheses which enclose the variable names are replaced with periods.  So, *μ(tBodyAccMeanX)* becomes *μ.tBodyAccMeanX.* instead.  No solution for this improper substitution was found prior to the completion of the project.
 
 ##### __References__:
 ###### 1. [*Data Science, Wearable Computing and the Battle for the Throne as World’s Top Sports Brand*](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/)
