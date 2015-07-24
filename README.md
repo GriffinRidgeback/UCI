@@ -1,3 +1,10 @@
+---
+title: "ReadMe"
+author: "Kevin E. D'Elia"
+date: "07/22/2015"
+output: html_document
+---
+
 # Repository UCI
 This repository contains the project work done for my Coursera class __Getting and Cleaning Data__.
 
@@ -71,10 +78,3 @@ The final step in the processing is to do the analysis.  The dataset is grouped 
 ###### 3. [*Hadley Wickham's paper on Tidy Data*](http://www.jstatsoft.org/v59/i10/paper)
 ###### 4. [*David's personal course project FAQ*](https://class.coursera.org/getdata-030/forum/thread?thread_id=37)
 ###### 5. [*Tidy Data and the Assignment*](https://class.coursera.org/getdata-030/forum/thread?thread_id=107)  
-
----
-title: "ReadMe"
-author: "Kevin E. D'Elia"
-date: "07/22/2015"
-output: html_document
----

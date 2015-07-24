@@ -1,5 +1,5 @@
 ---
-title: "Codebook for course project (Coursera - Getting and Cleaning Data )"
+title: "Codebook for course project (Coursera - Getting and Cleaning Data)"
 author: "Kevin E. D'Elia"
 date: "07/22/2015"
 output:
